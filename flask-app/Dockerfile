@@ -9,7 +9,6 @@ RUN apk update \
     && apk add build-base
 
 RUN pip install -r requirements.txt
-
 EXPOSE 8000
 
 RUN flask run
