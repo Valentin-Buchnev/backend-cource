@@ -1,0 +1,13 @@
+version: '2.2'
+services:
+  rabbit:
+    image: "rabbitmq"
+    ports: 
+     - "5680:5672"  
+  consumer:
+    build:
+      context: .
+      dockerfile: consumerDockerfile
+    restart: always
+    depends_on: 
+     - rabbit
