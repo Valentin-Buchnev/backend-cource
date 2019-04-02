@@ -8,4 +8,5 @@ class Config(object):
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    SECURITY_PASSWORD_SALT = 'my_precious_two'
 
