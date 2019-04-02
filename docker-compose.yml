@@ -1,6 +1,0 @@
-version: '2.2'
-services:
-  flask-app:
-    build:
-      context: flask-app
-      dockerfile: Dockerfile
