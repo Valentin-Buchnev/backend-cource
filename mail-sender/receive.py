@@ -17,8 +17,8 @@ def callback(ch, method, properties, body):
     try:
         smtpObj = smtplib.SMTP('smtp.mail.ru', 465)
         smtpObj.starttls()
-        smtpObj.login('backend.mipt@bk.ru','lolkek123')
-        smtpObj.sendmail("backend.mipt@bk.ru", email, confirm_url)
+        smtpObj.login('buchnev.kozinov.backend@mail.ru', 'backend2019')
+        smtpObj.sendmail('buchnev.kozinov.backend@mail.ru', email, confirm_url)
         smtpObj.quit()
         return True
     except Exception:
