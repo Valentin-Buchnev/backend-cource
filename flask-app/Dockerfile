@@ -9,4 +9,4 @@ ADD migrations /code
 ADD requirements.txt /code
 RUN pip install -r /code/requirements.txt
 CMD ["export", "FLASK_APP=first_app.py"]
-CMD ["flask" "run"]
+CMD ["flask", "run"]
