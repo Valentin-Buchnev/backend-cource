@@ -4,8 +4,8 @@ from web_app.forms import LoginForm, RegistrationForm
 from web_app.models import User
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
-from project.token import generate_confirmation_token, confirm_token
-from projecy.prodicer import send_request
+from web_app.token import generate_confirmation_token, confirm_token
+from web_app.producer import send_request
 
 
 @app.route('/')
@@ -60,9 +60,8 @@ def register():
 
         token = generate_confirmation_token(user.email)
         confirm_url = url_for('user.confirm_email', token=token, _external=True)
-        html = render_template('user/activate.html', confirm_url=confirm_url)
 
-        send_request(user.email,  html)
+        send_request(user.email,  confirm_url)
         flash('Congratulations, you ar'
               'e now a registered user!')
         return redirect(url_for('login'))
@@ -81,7 +80,6 @@ def confirm_email(token):
         flash('Account already confirmed. Please login.', 'success')
     else:
         user.confirmed = True
-        user.confirmed_on = datetime.datetime.now()
         db.session.add(user)
         db.session.commit()
         flash('You have confirmed your account. Thanks!', 'success')
