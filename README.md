@@ -1,2 +1,2 @@
-# backend-cource
-final project for backend cource, MIPT DIHT 2019
+# backend-course
+final project for backend course, MIPT DIHT 2019

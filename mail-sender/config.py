@@ -17,8 +17,8 @@ class Config(object):
     MAIL_USE_SSL = True
 
     # gmail authentication
-    MAIL_USERNAME = os.environ['APP_MAIL_USERNAME']
-    MAIL_PASSWORD = os.environ['APP_MAIL_PASSWORD']
+    MAIL_USERNAME = 'kek'
+    MAIL_PASSWORD = 'abacaba2'
 
     # mail accounts
-    MAIL_DEFAULT_SENDER = 'buchnev.kozinov.backend@mail.ru'
+    MAIL_DEFAULT_SENDER = 'buchnev.vs@phystech.edu'
