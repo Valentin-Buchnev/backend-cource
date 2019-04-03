@@ -59,7 +59,7 @@ def register():
         db.session.commit()
 
         token = generate_confirmation_token(user.email)
-        confirm_url = url_for('user.confirm_email', token=token, _external=True)
+        confirm_url = url_for('confirm_email', token=token, _external=True)
 
         send_request(user.email,  confirm_url)
         flash('Congratulations, you ar'
